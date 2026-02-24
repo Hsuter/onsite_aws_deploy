@@ -1,0 +1,12 @@
+services:
+  backend:
+    image: ${ECR_BACKEND}:${TAG}
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:3000"
+
+  frontend:
+    image: ${ECR_FRONTEND}:${TAG}
+    restart: unless-stopped
+    ports:
+      - "80:80"
